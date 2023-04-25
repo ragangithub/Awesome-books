@@ -3,15 +3,18 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 ul {
   list-style-type: none;
   border-bottom: 30px;
 }
+
 h1 {
   text-align: center;
   font-size: 30px;
   margin-bottom: 20px;
 }
+
 h2 {
   text-align: center;
   margin-bottom: 15px;
@@ -23,18 +26,22 @@ hr {
   margin: 0 auto;
   margin-top: 40px;
 }
+
 body {
   max-width: 80%;
   margin: 0 auto;
 }
+
 form {
   max-width: 60%;
   margin: 40px auto;
 }
+
 button {
   float: right;
   padding: 5px;
 }
+
 li {
   padding: 10px;
 }
@@ -53,14 +60,12 @@ input.text {
 
 li:nth-child(2n) {
   background-color: white;
-
   border: 2px solid black;
   border-bottom: 0;
 }
 
 li:nth-child(2n + 1) {
   background-color: grey;
-
   border: 2px solid black;
   border-bottom: 0;
 }
@@ -68,6 +73,7 @@ li:nth-child(2n + 1) {
 li:last-child {
   border-bottom: 2px solid black;
 }
+
 .remove-book-button {
   border: 3px solid black;
 }

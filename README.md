@@ -35,7 +35,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Portfolio microverse project <a name="about-project"></a>
+# 📖 Awesome books project <a name="about-project"></a>
 
 > This is project is called Awesome books. we created it using HTML and CSS,and JavaScript.
 
