@@ -7,7 +7,7 @@ function Book(title, author, id) {
 
 class BookCollection {
   constructor() {
-    this.books = JSON.parse(localStorage.getItem("books")) || [];
+    this.books = JSON.parse(localStorage.getItem('books')) || [];
     if (this.books.length === 0) {
       this.count = 0;
     } else {
@@ -19,23 +19,23 @@ class BookCollection {
     const newBook = new Book(title, author, id);
 
     this.books.push(newBook);
-    localStorage.setItem("books", JSON.stringify(this.books)); // save updated collection to localStorage
+    localStorage.setItem('books', JSON.stringify(this.books)); // save updated collection to localStorage
     this.displayBooks();
     this.count += 1;
   }
 
   removeBook(id) {
     this.books = this.books.filter((book) => book.id !== parseInt(id, 10));
-    localStorage.setItem("books", JSON.stringify(this.books)); // save updated collection to localStorage
+    localStorage.setItem('books', JSON.stringify(this.books)); // save updated collection to localStorage
     this.displayBooks();
   }
 
   displayBooks() {
-    const bookList = document.querySelector("ul");
+    const bookList = document.querySelector('ul');
 
-    bookList.innerHTML = "";
+    bookList.innerHTML = '';
     this.books.forEach((book) => {
-      const contain = document.createElement("li");
+      const contain = document.createElement('li');
       contain.id = book.id;
       contain.innerHTML = `
          <div class='check'>
@@ -53,66 +53,62 @@ class BookCollection {
 const bookCollection = new BookCollection();
 bookCollection.displayBooks();
 
-const addBookForm = document.getElementById("add-book-form");
-addBookForm.addEventListener("submit", (e) => {
+const addBookForm = document.getElementById('add-book-form');
+addBookForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const titleInput = document.getElementById("title-input");
-  const authorInput = document.getElementById("author-input");
+  const titleInput = document.getElementById('title-input');
+  const authorInput = document.getElementById('author-input');
   const id = bookCollection.count;
   bookCollection.addBook(titleInput.value, authorInput.value, id);
-  titleInput.value = "";
-  authorInput.value = "";
+  titleInput.value = '';
+  authorInput.value = '';
 });
 
 // event listener for remove book button click
-document.addEventListener("click", (e) => {
-  const target = e.target.closest(".remove-book-button");
+document.addEventListener('click', (e) => {
+  const target = e.target.closest('.remove-book-button');
   if (target) {
     const { id } = target.parentNode.parentNode;
     bookCollection.removeBook(id);
   }
 });
 
-//SPA
+// SPA
 
-const list = document.querySelector(".list");
-const add = document.querySelector(".add");
-const contact = document.querySelector(".contact");
+const list = document.querySelector('.list');
+const add = document.querySelector('.add');
+const contact = document.querySelector('.contact');
 
-const show_book = document.querySelector(".show-book");
-const add_book = document.querySelector(".add-book");
-const contact_section = document.querySelector("#contact-section");
+const showBook = document.querySelector('.show-book');
+const addBook = document.querySelector('.add-book');
+const contactSection = document.querySelector('#contact-section');
 
-list.addEventListener("click", (e) => {
+list.addEventListener('click', (e) => {
   e.preventDefault();
-  list.classList.add("active");
-  contact.classList.remove("active");
-  add.classList.remove("active");
-  show_book.style.display = "block";
-  add_book.style.display = "none";
-  contact_section.style.display = "none";
-  console.log("list");
+  list.classList.add('active');
+  contact.classList.remove('active');
+  add.classList.remove('active');
+  showBook.style.display = 'block';
+  addBook.style.display = 'none';
+  contactSection.style.display = 'none';
 });
-add.addEventListener("click", (e) => {
+add.addEventListener('click', (e) => {
   e.preventDefault();
 
-  add.classList.add("active");
-  contact.classList.remove("active");
-  list.classList.remove("active");
-  show_book.style.display = "none";
-  contact_section.style.display = "none";
-  add_book.style.display = "block";
-
-  console.log("add");
+  add.classList.add('active');
+  contact.classList.remove('active');
+  list.classList.remove('active');
+  showBook.style.display = 'none';
+  contactSection.style.display = 'none';
+  addBook.style.display = 'block';
 });
-contact.addEventListener("click", (e) => {
+contact.addEventListener('click', (e) => {
   e.preventDefault();
-  contact.classList.add("active");
-  add.classList.remove("active");
-  list.classList.remove("active");
-  console.log("hi");
+  contact.classList.add('active');
+  add.classList.remove('active');
+  list.classList.remove('active');
 
-  contact_section.style.display = "block";
-  show_book.style.display = "none";
-  add_book.style.display = "none";
+  contactSection.style.display = 'block';
+  showBook.style.display = 'none';
+  addBook.style.display = 'none';
 });
